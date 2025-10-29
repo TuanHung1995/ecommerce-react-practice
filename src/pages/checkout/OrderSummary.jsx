@@ -1,10 +1,9 @@
 import dayjs from 'dayjs';
-import { formatMoney } from '../../utils/money.js'
 
 // import DeliveryOptions from './DeliveryOptions.jsx';
 import CartItemDetailsGrid from './CartItemDetailsGrid.jsx';
 
-function OrderSummary({ cart, deliveryOptions }) {
+function OrderSummary({ cart, deliveryOptions, loadCart }) {
     return (
         <div className="order-summary">
 
@@ -21,7 +20,8 @@ function OrderSummary({ cart, deliveryOptions }) {
 
                         <CartItemDetailsGrid
                             cartItem={cartItem}
-                            deliveryOptions={deliveryOptions} />
+                            deliveryOptions={deliveryOptions}
+                            loadCart={loadCart} />
                     </div>
                 )
             })}
